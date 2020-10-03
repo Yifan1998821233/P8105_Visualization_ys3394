@@ -169,11 +169,11 @@ knitr::opts_chunk$set(
 theme_set(theme_minimal() + theme(legend.position = "bottom"))
 
 options(
-  ggplot2.continuous.color = "viridis",
+  ggplot2.continuous.colour = "viridis",
   ggplot2.continuous.fill = "viridis"
 )
 
-scale_color_discrete = scale_color_viridis_d
+scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
@@ -237,7 +237,7 @@ Control you factors.
 weather_df %>% 
   mutate(
     name = factor(name),
-    name = forcats::fct_relevel(name, c("Waikiki_HA")) #change the order of them, convert them to factor. It's a data manipulation problem.
+    name = forcats::fct_relevel(name, c("Waikiki_HA")) #change the order of them, convert them to factor. It's a data manipulation problem./ or (name, tmax), in the order of tmax.
   ) %>% 
   ggplot(aes(x = name, y = tmax, color = name)) +
   geom_violin(alpha = .5)

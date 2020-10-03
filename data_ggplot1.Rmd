@@ -1,5 +1,5 @@
 ---
-title: "Data Import"
+title: "Data ggplot1"
 author: "Yifan Su"
 date: "10/2/2020"
 output: github_document
@@ -172,6 +172,34 @@ weather_df %>%
   ggplot(aes(x = tmin, y = name)) + 
   geom_density_ridges() # separate = like states
 ```
+
+
+
+## Save and Embed
+
+Let's save a scatterplot.
+
+```{r}
+weather_plot =
+weather_df %>% 
+  ggplot(aes(x = tmin, y = tmax, color = name)) +
+  geom_point(alpha = .5)
+
+ggsave("weather_plot.pdf", weather_plot, width =  8, height = 5)
+```
+
+What about embeding ..
+
+```{r, fig.width=6, fig.height=3}
+weather_plot
+```
+
+Embed at different size.
+
+```{r, fig.width=12, fig.height=6}
+weather_plot
+```
+
 
 
 
